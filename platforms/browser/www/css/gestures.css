@@ -1,0 +1,21 @@
+body {
+    background-color: lightgray;
+}
+
+button #claro {
+    background-color: lightgreen
+}
+
+button #oscuro {
+    background-color: darkgreen
+}
+
+button {
+    background-color: green;
+    color: black;
+    border: none;
+    width: 100%;
+    padding: 30px;
+    font-size: 2em;
+    margin-top: 10px;
+}
