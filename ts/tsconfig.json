@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+         "baseUrl": "../",
+        "noImplicitAny": false,
+        "sourceMap": false
+    },
+    "files": [
+        "phonegap.d.ts", "gestures.ts"
+    ]
+}

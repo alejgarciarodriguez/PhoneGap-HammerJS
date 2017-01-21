@@ -2,16 +2,16 @@ body {
     background-color: lightgray;
 }
 
-button #claro {
-    background-color: lightgreen
+body.claro {
+    background-color: lightgreen;
 }
 
-button #oscuro {
-    background-color: darkgreen
+body.oscuro {
+    background-color: darkgreen;
 }
 
 button {
-    background-color: green;
+    background-color: lightgreen;
     color: black;
     border: none;
     width: 100%;
