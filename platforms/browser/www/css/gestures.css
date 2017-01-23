@@ -2,11 +2,19 @@ body {
     background-color: lightgray;
 }
 
-body.claro {
+div#zona_gestos {
+    width: 100%;
+    min-height: 300px;
+    background-color: green;
+    margin-top: 10px;
+    display: block;
+}
+
+.claro {
     background-color: lightgreen;
 }
 
-body.oscuro {
+.oscuro {
     background-color: darkgreen;
 }
 
