@@ -1,12 +1,9 @@
-# A Blank PhoneGap App
+# Creando Apps. Aprende a programar aplicaciones móviles.
+Módulos y actividades del curso de Miríada X
 
-## Usage
+Enlace al curso. [https://miriadax.net/web/creando-apps-aprende-a-programar-aplicaciones-moviles]
 
-### PhoneGap CLI
-
-    $ phonegap create my-app --template blank
-
-### Desktop
+## Desktop
 
 In your browser, open the file:
 
