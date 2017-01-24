@@ -19,8 +19,27 @@ const app = {
         hammer.get("pinch").set( enable );
         hammer.get("rotate").set( enable );
 
+        zona_gestos.addEventListener("webkitAnimationEnd", 
+        () => zona_gestos.className='');
+
         hammer.on("tap doubletap pan swipe press pinch rotate",
         (ev) => document.querySelector("#info").innerHTML= ev.type+"!");
+
+        hammer.on("doubletap", (ev) => zona_gestos.className="doubletap");
+        
+        hammer.on("press", (ev) => zona_gestos.className="press");
+
+        hammer.on("swipe", (ev) => {
+            if(ev.direction==4){ zona_gestos.className="swipe-derecha"; }
+            if(ev.direction==2){ zona_gestos.className="swipe-izquierda"; }
+        });
+
+        hammer.on("rotate", (ev) => {
+            const umbral = 25;
+            if(ev.distance > umbral){
+                zona_gestos.className="rotate";
+            }
+        });
     }
 }
 
