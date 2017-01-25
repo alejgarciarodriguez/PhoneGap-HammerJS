@@ -2,12 +2,30 @@ body {
     background-color: lightgray;
 }
 
-.claro {
-    background-color: lightgreen;
+@-webkit-keyframes claro {
+    0%, 100% {
+        background-color: green;
+    }
+    50% {
+        background-color: lightgreen;
+    }
 }
 
-.oscuro {
-    background-color: darkgreen;
+button #claro.click {
+    -webkit-animation: claro 1.5 1;
+}
+
+button #oscuro.click {
+    -webkit-animation: oscuro 1.5 1;
+}
+
+@-webkit-keyframes oscuro {
+    0%, 100% {
+        background-color: green
+    }
+    50% {
+        background-color: darkgreen
+    }
 }
 
 button {
