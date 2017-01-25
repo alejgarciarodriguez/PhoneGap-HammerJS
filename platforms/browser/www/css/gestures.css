@@ -1,110 +1,99 @@
-body {
-    background-color: lightgray;
+body{
+  background-color: #8eadc5;
 }
 
-@-webkit-keyframes claro {
-    0%, 100% {
-        background-color: green;
-    }
-    50% {
-        background-color: lightgreen;
-    }
+body.claro{
+  background-color: #8de1bd;
 }
 
-button #claro.click {
-    -webkit-animation: claro 1.5 1;
+body.oscuro{
+  background-color: #577a76;
 }
 
-button #oscuro.click {
-    -webkit-animation: oscuro 1.5 1;
+button{
+  background-color: #7fba67;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 30px;
+  font-size: 1em;
+  margin-top: 10px;
 }
 
-@-webkit-keyframes oscuro {
-    0%, 100% {
-        background-color: green
-    }
-    50% {
-        background-color: darkgreen
-    }
+#zona-gestos{
+  width:100%;
+  background-color: #7fba67;
+  margin-top: 10px;
+  min-height: 300px;
+  display: block;
 }
 
-button {
-    background-color: green;
-    color: white;
-    border: none;
-    width: 100%;
-    padding: 30px;
-    font-size: 2em;
-    margin-top: 10px;
-    text-transform: uppercase;
+#info{
+  color: #ffffff;
+  font-size: 2em;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
-div#zona_gestos {
-    width: 100%;
-    min-height: 300px;
-    background-color: green;
-    margin-top: 10px;
-    display: block;
-}
-
-div#zona_gestos.doubletap {
+#zona-gestos.doubletap{
     -webkit-animation: pulsacion 1.5s 1;
 }
 
-div#zona_gestos.press {
-    -webkit-animation: pulsacion 1.5s 1;
+#zona-gestos.press{
+    -webkit-animation: presion 1.5s 1;
 }
 
-#info {
-    color: white;
-}
-
-@-webkit-keyframes pulsacion {
-    0%, 100% {
-        background-color: lightgreen;
-    }
-    50% {
-        background-color: white;
-    }
-}
-
-@-webkit-keyframes presion {
-    0%, 100% {
-        background-color: darkgreen;
-    }
-    50% {
-        background-color: lightgreen;
-    }
-}
-
-@-webkit-keyframes swipe-derecha {
-    0%, 100% {
-        margin-left: 0%;
-    }
-    50% {
-        margin-left: 100%;
-    }
-}
-
-@-webkit-keyframes swipe-izquierda {
-    0%, 100% {
-        width: 100%;
-    }
-    50% {
-        width: 0%;
-    }
-}
-
-div#zona_gestos.swipe-derecha {
+#zona-gestos.swipe-derecha{
     -webkit-animation: swipe-derecha 3s 1;
 }
 
-div#zona_gestos.swipe-izquierda {
+#zona-gestos.swipe-izquierda{
     -webkit-animation: swipe-izquierda 3s 1;
 }
 
-@-webkit-keyframes rotate {
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+#zona-gestos.rotate{
+    -webkit-animation: rotate 3s 1;
+}
+
+@-webkit-keyframes pulsacion {
+  0%, 100% {
+    background-color: #7fba67;
+  }
+  50% {
+    background-color: #8de1bd;
+  }
+}
+
+@-webkit-keyframes presion {
+  0%, 100% {
+    background-color: #7fba67;
+  }
+  50% {
+    background-color: #577a76;
+  }
+}
+
+
+@-webkit-keyframes swipe-derecha {
+  0%, 100% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 100%;
+  }
+}
+
+@-webkit-keyframes swipe-izquierda {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes rotate { 
+  100% { 
+    -webkit-transform: rotate(360deg);
+  } 
 }

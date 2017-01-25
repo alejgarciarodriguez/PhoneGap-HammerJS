@@ -44,7 +44,7 @@ const app = {
 }
 
 app.inicio();
-
+app.iniciaHammer();
 if('addEventListener' in document){
     document.addEventListener('DOMContentLoaded',() => {
         FastClick.attach(document.body);
