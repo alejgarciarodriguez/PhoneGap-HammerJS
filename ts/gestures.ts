@@ -12,7 +12,7 @@ const app = {
        botonOscuro.addEventListener("click",app.ponloOscuro,false);
     },
     iniciaHammer: () => {
-        const zona_gestos = document.getElementById("zona_gestos");
+        const zona_gestos = document.getElementById("zona-gestos");
         const hammer = new Hammer(zona_gestos);
 
         const enable = { enable : true }

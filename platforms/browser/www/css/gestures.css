@@ -2,15 +2,35 @@ body{
   background-color: #8eadc5;
 }
 
+@-webkit-keyframes oscuro {
+    0%, 100% {
+        background-color: #7fba67;
+    }
+    50% {
+        background: #577a76;
+    }
+}
+
+@-webkit-keyframes claro {
+    0%, 100% {
+        background-color: #7fba67;
+    }
+    50% {
+        background-color: #8de1bd;
+    }
+}
+
+
 body.claro{
-  background-color: #8de1bd;
+  -webkit-animation: claro 1.5s 1;
 }
 
 body.oscuro{
-  background-color: #577a76;
+  -webkit-animation: oscuro 1.5s 1;
 }
 
-button{
+
+button {
   background-color: #7fba67;
   color: #ffffff;
   border: none;
