@@ -60,7 +60,7 @@ button {
 }
 
 #zona-gestos.tap {
-    -webkit-animation: tap 1.5s 1;
+    -webkit-animation: tap 0.1s 1;
 }
 
 #zona-gestos.press{
@@ -93,7 +93,7 @@ button {
     background-color: #7fba67;
   }
   50% {
-    background-color: papayawhip;
+    background-color: yellow;
   }
 }
 
