@@ -8,6 +8,6 @@
         "sourceMap": false
     },
     "files": [
-        "phonegap.d.ts", "gestures.ts","hammer.d.ts"
+        "gestures.ts","phonegap.d.ts","hammer.d.ts"
     ]
 }
