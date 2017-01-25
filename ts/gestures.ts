@@ -1,53 +1,74 @@
-const app = {
-    ponloClaro: () => {
-       document.body.className = "claro";
-    },
-    ponloOscuro: () => {
-        document.body.className = "oscuro";
-    },
-    inicio: () => {
-       const botonClaro = document.querySelector("#claro");
-       const botonOscuro = document.querySelector("#oscuro");
-       botonClaro.addEventListener("click",app.ponloClaro,false);
-       botonOscuro.addEventListener("click",app.ponloOscuro,false);
-    },
-    iniciaHammer: () => {
-        const zona_gestos = document.getElementById("zona-gestos");
-        const hammer = new Hammer(zona_gestos);
+var app={
+  inicio: function(){
+    this.iniciaBotones();
+    this.iniciaFastClick();
+    this.iniciaHammer();
+  },
 
-        const enable = { enable : true }
-        hammer.get("pinch").set( enable );
-        hammer.get("rotate").set( enable );
+  iniciaFastClick: function () {
+    FastClick.attach(document.body);
+  },
+  
+  iniciaBotones: function(){
+    var botonClaro = document.querySelector('#claro');
+    var botonOscuro = document.querySelector('#oscuro');
+    
+    botonClaro.addEventListener('click',app.ponloClaro,false);
+    botonOscuro.addEventListener('click',app.ponloOscuro,false);
+  },
 
-        zona_gestos.addEventListener("webkitAnimationEnd", 
-        () => zona_gestos.className='');
+  iniciaHammer: function() {
+    var zona = document.getElementById('zona-gestos');
+    var hammertime = new Hammer(zona);
+    hammertime.get('pinch').set({ enable: true });
+    hammertime.get('rotate').set({ enable: true });
 
-        hammer.on("tap doubletap pan swipe press pinch rotate",
-        (ev) => document.querySelector("#info").innerHTML= ev.type+"!");
+    zona.addEventListener('webkitAnimationEnd',function(e){
+      zona.className='';
+    });
+    
+     hammertime.on('doubletap', function(ev) {
+      zona.className='doubletap';
+    });
 
-        hammer.on("doubletap", (ev) => zona_gestos.className="doubletap");
-        
-        hammer.on("press", (ev) => zona_gestos.className="press");
+    hammertime.on('tap', function(ev){
+      zona.className='tap';
+    });
 
-        hammer.on("swipe", (ev) => {
-            if(ev.direction==4){ zona_gestos.className="swipe-derecha"; }
-            if(ev.direction==2){ zona_gestos.className="swipe-izquierda"; }
-        });
+    hammertime.on('press', function(ev) {
+      zona.className='press';
+    });
 
-        hammer.on("rotate", (ev) => {
-            const umbral = 25;
-            if(ev.distance > umbral){
-                zona_gestos.className="rotate";
-            }
-        });
-    }
-}
+    hammertime.on('swipe', function(ev) {
+      var clase=undefined;
+      direccion=ev.direction;
 
-app.inicio();
-app.iniciaHammer();
-if('addEventListener' in document){
-    document.addEventListener('DOMContentLoaded',() => {
-        FastClick.attach(document.body);
+      if (direccion==4) clase='swipe-derecha';
+      if (direccion==2) clase='swipe-izquierda';
+      
+      zona.className=clase;
+    });
+
+    hammertime.on('rotate', function(ev) {
+      var umbral=25;
+      if (ev.distance > umbral){
+        zona.className='rotate';
+      }
+    });
+  },
+
+  ponloClaro: function(){
+    document.body.className = 'claro';
+  },
+
+  ponloOscuro: function(){
+    document.body.className = 'oscuro';
+  },
+
+};
+
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
         app.inicio();
     }, false);
 }
