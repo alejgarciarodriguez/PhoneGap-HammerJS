@@ -95,6 +95,14 @@ div#zona_gestos.press {
     }
 }
 
+div#zona_gestos.swipe-derecha {
+    -webkit-animation: swipe-derecha 3s 1;
+}
+
+div#zona_gestos.swipe-izquierda {
+    -webkit-animation: swipe-izquierda 3s 1;
+}
+
 @-webkit-keyframes rotate {
     100% {
         -webkit-transform: rotate(360deg);
